@@ -1,5 +1,5 @@
 from django.urls import include, path
-from .views import questions_views, question_type_views, answer_views, test_views
+from .views import questions_views, question_type_views, answer_views
 
 urlpatterns = [
     
@@ -11,6 +11,5 @@ urlpatterns = [
     
     path('answers/', answer_views.AnswerListCreateView.as_view(), name='list-create-answer'),
     path('answers/<int:pk>/', answer_views.AnswerDetailView.as_view(), name='retrieve-update-delete-answer'),
-    
-    path('test-predict/', test_views.PredictView.as_view(), name='test-predict')
+    path('answers/import/', answer_views.ImportDataAPIView.as_view(), name='import-answer'),
 ]

@@ -5,7 +5,7 @@ class QuestionType(models.Model):
     Model representing a type of question.
     """
     question_type_id = models.AutoField(primary_key=True)
-    type = models.CharField(max_length=2)  # Enforces unique question types
+    type = models.CharField(max_length=100)  # Enforces unique question types
 
     def __str__(self):
         return self.type
@@ -25,5 +25,5 @@ class Answer(models.Model):
     """
     answer_id = models.AutoField(primary_key=True)
     question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
-    answer_text = models.CharField(max_length=255)
-    type = models.CharField(max_length = 1)
+    answer_text = models.CharField()
+    type_result = models.CharField(max_length=1)
