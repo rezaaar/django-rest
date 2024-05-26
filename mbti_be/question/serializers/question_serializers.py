@@ -5,5 +5,5 @@ class QuestionSerializer(serializers.ModelSerializer):
     type = serializers.CharField(source='question_type.type', read_only=True)
     class Meta:
         model = Question
-        fields = ('question_id', 'question_type', 'question_text', 'level', 'type')
+        fields = ('question_id', 'question_type', 'question_text','question_code', 'level', 'type')
     

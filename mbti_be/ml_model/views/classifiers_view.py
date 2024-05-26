@@ -34,8 +34,8 @@ def PredictModel(request):
     result.append(y_pred[0])
     
     if result == [0] :
-        result_output = '0'
+        result_output = 0
     else :
-        result_output = '1'
+        result_output = 1
     
-    return Response({"result": result_output, "level" : 12}, status=status.HTTP_200_OK)
+    return Response({"result": result_output}, status=status.HTTP_200_OK)
